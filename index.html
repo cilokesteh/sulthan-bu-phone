@@ -235,14 +235,31 @@
       box-shadow: 0 8px 30px rgba(233,69,96,0.1);
     }
     .brand-card .brand-logo {
-      width: 56px; height: 56px;
+      width: 60px; height: 60px;
       margin: 0 auto 14px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.8rem;
       border-radius: 50%;
-      background: rgba(255,255,255,0.03);
+      background: rgba(255,255,255,0.05);
+      overflow: hidden;
+    }
+    .brand-card .brand-logo svg {
+      width: 32px; height: 32px;
+    }
+    .brand-card .brand-logo img {
+      width: 36px; height: 36px;
+      object-fit: contain;
+    }
+    .brand-card .brand-logo .brand-emoji {
+      font-size: 1.5rem;
+    }
+    .brand-card .brand-logo .brand-text {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     .brand-card .brand-name {
       font-size: 0.9rem;
@@ -534,51 +551,67 @@
     </div>
     <div class="brand-grid">
       <div class="brand-card">
-        <div class="brand-logo"></div>
+        <div class="brand-logo"><img src="https://cdn.simpleicons.org/Apple" alt="Apple" loading="lazy"></div>
         <div class="brand-name">Apple</div>
       </div>
       <div class="brand-card">
-        <div class="brand-logo">📱</div>
+        <div class="brand-logo"><img src="https://cdn.simpleicons.org/Samsung" alt="Samsung" loading="lazy"></div>
         <div class="brand-name">Samsung</div>
       </div>
       <div class="brand-card">
-        <div class="brand-logo">🟠</div>
+        <div class="brand-logo"><img src="https://cdn.simpleicons.org/Xiaomi" alt="Xiaomi" loading="lazy"></div>
         <div class="brand-name">Xiaomi</div>
       </div>
       <div class="brand-card">
-        <div class="brand-logo">🔵</div>
+        <div class="brand-logo"><img src="https://cdn.simpleicons.org/OPPO" alt="OPPO" loading="lazy"></div>
         <div class="brand-name">Oppo</div>
       </div>
       <div class="brand-card">
-        <div class="brand-logo">🟣</div>
+        <div class="brand-logo"><img src="https://cdn.simpleicons.org/Vivo" alt="Vivo" loading="lazy"></div>
         <div class="brand-name">Vivo</div>
       </div>
       <div class="brand-card">
-        <div class="brand-logo">⚡</div>
-        <div class="brand-name">Realme</div>
-      </div>
-      <div class="brand-card">
-        <div class="brand-logo">🔷</div>
-        <div class="brand-name">Infinix</div>
-      </div>
-      <div class="brand-card">
-        <div class="brand-logo">🔥</div>
-        <div class="brand-name">Poco</div>
-      </div>
-      <div class="brand-card">
-        <div class="brand-logo">🧠</div>
-        <div class="brand-name">Nothing</div>
-      </div>
-      <div class="brand-card">
-        <div class="brand-logo">🎮</div>
+        <div class="brand-logo"><img src="https://cdn.simpleicons.org/ASUS" alt="Asus ROG" loading="lazy"></div>
         <div class="brand-name">Asus ROG</div>
       </div>
       <div class="brand-card">
-        <div class="brand-logo">🟢</div>
+        <div class="brand-logo"><img src="https://cdn.simpleicons.org/Google" alt="Google Pixel" loading="lazy"></div>
+        <div class="brand-name">Google Pixel</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo"><img src="https://cdn.simpleicons.org/Motorola" alt="Motorola" loading="lazy"></div>
+        <div class="brand-name">Motorola</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo"><img src="https://cdn.simpleicons.org/Honor" alt="Honor" loading="lazy"></div>
+        <div class="brand-name">Honor</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo"><img src="https://cdn.simpleicons.org/OnePlus" alt="OnePlus" loading="lazy"></div>
+        <div class="brand-name">OnePlus</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo" style="background:#000;"><span style="font-weight:700;color:#f76b15;font-size:0.7rem;letter-spacing:2px;">POCO</span></div>
+        <div class="brand-name">Poco</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo" style="background:#000;"><span style="font-weight:400;color:#fff;font-size:0.6rem;letter-spacing:1px;">Nothing.</span></div>
+        <div class="brand-name">Nothing</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo"><span style="font-weight:800;color:#e60012;font-size:0.7rem;">realme</span></div>
+        <div class="brand-name">Realme</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo"><span style="font-weight:800;color:#ff6900;font-size:0.65rem;letter-spacing:1px;">Infinix</span></div>
+        <div class="brand-name">Infinix</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo"><span style="font-weight:800;color:#1a9ce0;font-size:0.7rem;">TECNO</span></div>
         <div class="brand-name">Tecno</div>
       </div>
       <div class="brand-card">
-        <div class="brand-logo">🆕</div>
+        <div class="brand-logo"><span class="brand-emoji">➕</span></div>
         <div class="brand-name">Lainnya</div>
       </div>
     </div>
