@@ -12,16 +12,17 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     :root {
-      --primary: #1a1a2e;
-      --accent: #e94560;
-      --accent2: #0f3460;
-      --gold: #f5a623;
-      --bg: #0f0f1a;
-      --card: #1a1a2e;
+      --primary: #0a0a0f;
+      --accent: #E61E25;
+      --accent2: #1a1a2e;
+      --gold: #FFCC00;
+      --gold-deep: #FFA500;
+      --bg: #000000;
+      --card: #0f0f1a;
       --text: #ffffff;
       --muted: #8892b0;
       --radius: 16px;
-      --shadow: 0 8px 32px rgba(0,0,0,0.3);
+      --shadow: 0 8px 32px rgba(0,0,0,0.5);
     }
 
     html { scroll-behavior: smooth; }
@@ -39,7 +40,7 @@
       top: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(15,15,26,0.85);
+      background: rgba(0,0,0,0.85);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(255,255,255,0.05);
       padding: 14px 24px;
@@ -48,14 +49,26 @@
       align-items: center;
     }
     .logo {
-      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .logo-text {
+      font-size: 1.2rem;
       font-weight: 800;
-      background: linear-gradient(135deg, var(--accent), var(--gold));
+      background: linear-gradient(135deg, var(--gold), var(--gold-deep));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: -0.5px;
     }
-    .logo span { color: var(--text); -webkit-text-fill-color: var(--text); font-weight: 400; }
+    .logo-text span { color: var(--text); -webkit-text-fill-color: var(--text); font-weight: 400; }
     .nav-links { display: flex; gap: 28px; align-items: center; }
     .nav-links a {
       color: var(--muted);
@@ -93,17 +106,28 @@
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(ellipse at 30% 20%, rgba(233,69,96,0.12), transparent 50%),
-                  radial-gradient(ellipse at 70% 80%, rgba(15,52,96,0.15), transparent 50%);
+      background: radial-gradient(ellipse at 30% 20%, rgba(230,30,37,0.12), transparent 50%),
+                  radial-gradient(ellipse at 70% 80%, rgba(255,204,0,0.08), transparent 50%);
       pointer-events: none;
     }
     .hero-content { max-width: 800px; position: relative; z-index: 1; }
+    .hero-logo {
+      width: 180px;
+      height: auto;
+      border-radius: 20px;
+      margin: 0 auto 28px;
+      display: block;
+      box-shadow: 0 8px 40px rgba(230,30,37,0.3), 0 0 0 1px rgba(255,204,0,0.15);
+    }
+    @media (max-width: 768px) {
+      .hero-logo { width: 130px; border-radius: 14px; }
+    }
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(233,69,96,0.1);
-      border: 1px solid rgba(233,69,96,0.3);
+      background: rgba(230,30,37,0.1);
+      border: 1px solid rgba(230,30,37,0.3);
       color: var(--accent);
       padding: 8px 18px;
       border-radius: 100px;
@@ -127,7 +151,7 @@
       letter-spacing: -1.5px;
     }
     .hero h1 .grad {
-      background: linear-gradient(135deg, var(--accent), var(--gold));
+      background: linear-gradient(135deg, var(--gold), var(--gold-deep));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -139,7 +163,7 @@
     }
     .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #c81d3a);
+      background: linear-gradient(135deg, var(--accent), #b0151b);
       color: #fff;
       padding: 14px 32px;
       border-radius: 100px;
@@ -147,9 +171,9 @@
       font-size: 1rem;
       text-decoration: none;
       transition: all 0.3s;
-      box-shadow: 0 4px 20px rgba(233,69,96,0.4);
+      box-shadow: 0 4px 20px rgba(230,30,37,0.4);
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(233,69,96,0.5); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(230,30,37,0.5); }
     .btn-secondary {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
@@ -193,7 +217,7 @@
     .feature-icon.f1 { background: rgba(37,211,102,0.1); }
     .feature-icon.f2 { background: rgba(245,166,35,0.1); }
     .feature-icon.f3 { background: rgba(15,52,96,0.3); }
-    .feature-icon.f4 { background: rgba(233,69,96,0.1); }
+    .feature-icon.f4 { background: rgba(230,30,37,0.1); }
 
     /* === SECTION === */
     section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
@@ -231,8 +255,8 @@
     }
     .brand-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(233,69,96,0.3);
-      box-shadow: 0 8px 30px rgba(233,69,96,0.1);
+      border-color: rgba(255,204,0,0.3);
+      box-shadow: 0 8px 30px rgba(255,204,0,0.1);
     }
     .brand-card .brand-logo {
       width: 60px; height: 60px;
@@ -311,7 +335,7 @@
     .service-card .svc-tag {
       display: inline-block;
       margin-top: 14px;
-      background: rgba(233,69,96,0.1);
+      background: rgba(230,30,37,0.1);
       color: var(--accent);
       padding: 4px 12px;
       border-radius: 100px;
@@ -321,11 +345,12 @@
 
     /* === GESTUN PAYLATER === */
     .paylater-section {
-      background: linear-gradient(135deg, rgba(15,52,96,0.3), rgba(233,69,96,0.1));
+      background: linear-gradient(135deg, rgba(230,30,37,0.08), rgba(255,204,0,0.06));
       border-radius: 24px;
       padding: 48px;
       max-width: 1100px;
       margin: 0 auto;
+      border: 1px solid rgba(255,204,0,0.1);
     }
     .paylater-grid {
       display: grid;
@@ -362,7 +387,7 @@
       margin-bottom: 16px;
     }
     .marketing-strip h2 .grad {
-      background: linear-gradient(135deg, var(--accent), var(--gold));
+      background: linear-gradient(135deg, var(--gold), var(--gold-deep));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -393,10 +418,11 @@
     .cta-section {
       text-align: center;
       padding: 80px 24px;
-      background: linear-gradient(135deg, var(--accent2), var(--card));
+      background: linear-gradient(135deg, var(--card), rgba(230,30,37,0.08));
       border-radius: 24px;
       max-width: 1100px;
       margin: 0 auto 60px;
+      border: 1px solid rgba(255,204,0,0.08);
     }
     .cta-section h2 {
       font-size: clamp(1.5rem, 4vw, 2.5rem);
@@ -420,7 +446,7 @@
     .footer-logo {
       font-size: 1.4rem;
       font-weight: 800;
-      background: linear-gradient(135deg, var(--accent), var(--gold));
+      background: linear-gradient(135deg, var(--gold), var(--gold-deep));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 12px;
@@ -463,9 +489,9 @@
       transition: all 0.3s;
     }
     .footer-social .social-link:hover {
-      color: var(--text);
-      background: rgba(233,69,96,0.15);
-      border-color: rgba(233,69,96,0.3);
+      color: var(--gold);
+      background: rgba(255,204,0,0.12);
+      border-color: rgba(255,204,0,0.3);
       transform: translateY(-3px);
     }
     .footer-copy {
@@ -499,8 +525,6 @@
     }
     .wa-float:hover { transform: scale(1.1); }
     .wa-float svg { width: 30px; height: 30px; fill: #fff; }
-
-    /* === MAP === */
     .map-section { max-width: 1100px; margin: 0 auto; }
     .map-embed {
       border-radius: 16px;
@@ -525,7 +549,10 @@
 
   <!-- NAVBAR -->
   <nav>
-    <a href="#" class="logo">Sulthan BU<span> Phone</span></a>
+    <a href="#" class="logo">
+      <img src="assets/sulthan-logo.jpg" alt="Sulthan BU Phone Logo">
+      <span class="logo-text">Sulthan BU<span> Phone</span></span>
+    </a>
     <div class="nav-links">
       <a href="#brands">Brand</a>
       <a href="#services">Layanan</a>
@@ -538,6 +565,7 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-content">
+      <img src="assets/sulthan-banner.jpg" alt="Sulthan Gadget Shop" class="hero-logo" loading="lazy">
       <div class="hero-badge">
         <span class="dot"></span>
         Buka 24 Jam &middot; COD Seluruh Semarang
